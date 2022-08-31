@@ -5,7 +5,7 @@ const TableHeader = ({ title }) => {
 
   useEffect(() => {
     setTimer(previousTimer => previousTimer + 1);
-  }, []);
+  }, [timer]);
 
   return (
     <thead>
