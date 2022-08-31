@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TableHeader from "../TableHeader/tableheader";
 import TableItem from "../TableItem/tableitem";
-import './tablecomponent.css';
+import '../../App.css';
 
 const TableComponent = (props) => {
   const { items, title } = props;
@@ -13,7 +13,7 @@ const TableComponent = (props) => {
       {items.map((i) => {
         return (
           <tr>
-            <TableItem item={i}></TableItem>
+            <TableItem id={i}></TableItem>
           </tr>
         );
       })}

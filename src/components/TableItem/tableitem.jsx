@@ -1,38 +1,37 @@
 import React, { useEffect, useState } from "react";
+import "../../App.css";
 
 const TableItem = (props) => {
-  const { content, href } = props;
+  const { id } = props;
 
-  const [open, setOpen] = useState(!!content);
-  const [extraContent, setExtraContent] = useState(null);
+  const [open, setOpen] = useState(false);
+  const [data, setData] = useState({});
 
   async function fetchData() {
-    const response = await fetch(href);
-    setExtraContent(response.extraContent);
+    const request = await fetch(`/data/${id}`);
+    const response = await request.json();
+    setData(response);
   }
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   return (
     <>
       <td>
         <button
           className="table-component-toggle-content"
-          onClick={(e) => setOpen(!open)}
+          onClick={() => setOpen(!open)}
         >
           Toggle content
         </button>
-
-        <span
-          style={{ display: open ? "block" : "hidden" }}
-          className="table-component-content"
-        >
-          {content}
-        </span>
-
-        <span className="table-component-extracontent">{extraContent}</span>
+        <div className={`table-component-content${open ? "-open" : ""}`}>
+          <span>{data?.content ? data.content : 'No content'}</span>
+          <span className="table-component-extracontent">
+            {data && data.extraContent}
+          </span>
+        </div>
       </td>
     </>
   );
