@@ -20,7 +20,7 @@ const TableItem = (props) => {
         >
           Toggle content
         </button>
-        <div className={`table-component-content${open ? "-open" : ""}`}>
+        <div className={`table-component-content${open ? "-open" : ""}`} data-testid="table-item-component">
           <span>{data?.content ? data.content : "No content"}</span>
           <span className="table-component-extracontent">
             {data && data.extraContent}

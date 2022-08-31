@@ -5,13 +5,13 @@ const TableHeader = ({ title }) => {
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setTimer(prevTimer => prevTimer + 1); // toinen ratkasu laittaa timer + 1 ja useEffectin dependancyyn timer
-    }, 1000)
-    return () => clearInterval(intervalId); // välttää memory leakin (sekunnitkin pomppi vähän GUI:ssa)
+      setTimer((prevTimer) => prevTimer + 1);
+    }, 1000);
+    return () => clearInterval(intervalId); // prevent memory leak
   }, []);
 
   return (
-    <thead>
+    <thead data-testid="table-header-component">
       <tr>
         <th>
           {title} {timer}
