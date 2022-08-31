@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import useFetchData from "../../hooks/useFetchData";
 import "../../App.css";
 
 const TableItem = (props) => {
-  const { id } = props;
+  const { data } = props;
 
   const [open, setOpen] = useState(false);
 
-  const [data, error] = useFetchData(id);
-  if (!data) return "Loading...";
-  if (error) return "Errored!";
-
+  // Ottaa propsina nyt datan, joka tulee pää table komponentista bodyn kautta tänne ja näytetään nää datat käyttäjälle (jos löytyy)
+  // Otettu style tägi pois ja siirretty css:sät nyt App.css filuun (koska projekti on niin pieni). Isommassa projektissa komponentille oma style filu
   return (
     <>
       <td>
@@ -20,7 +17,10 @@ const TableItem = (props) => {
         >
           Toggle content
         </button>
-        <div className={`table-component-content${open ? "-open" : ""}`} data-testid="table-item-component">
+        <div
+          className={`table-component-content${open ? "-open" : ""}`}
+          data-testid="table-item-component"
+        >
           <span>{data?.content ? data.content : "No content"}</span>
           <span className="table-component-extracontent">
             {data && data.extraContent}

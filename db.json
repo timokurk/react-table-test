@@ -1,7 +1,7 @@
 {
   "data": [
-    { "id": 1, "content": "content for first item", "extraContent": "extraContent for first item" },
-    { "id": 2, "content": "content for second item", "extraContent": "extraContent for second item" },
-    { "id": 3, "content": "content for third item", "extraContent": "extraContent for third item" }
+    { "id": 1, "content": "content for first item", "extraContent": "extra content for first item" },
+    { "id": 2, "content": "content for second item", "extraContent": "extra content for second item" },
+    { "id": 3, "content": "content for third item", "extraContent": "extra content for third item" }
   ]
 }
