@@ -8,8 +8,11 @@ const TableItem = (props) => {
 
   // Ottaa propsina nyt datan, joka tulee pää table komponentista bodyn kautta tänne ja näytetään nää datat käyttäjälle (jos löytyy)
   // Otettu style tägi pois ja siirretty css:sät nyt App.css filuun (koska projekti on niin pieni). Isommassa projektissa komponentille oma style filu
+  // Tehty tablesta enemmän tablen näkönen ja napista avautuu lisätietoja käyttäjistä sen alle
   return (
     <>
+      <td>{data.id}</td>
+      <td>{data.name}</td>
       <td>
         <button
           className="table-component-toggle-content"
@@ -21,10 +24,13 @@ const TableItem = (props) => {
           className={`table-component-content${open ? "-open" : ""}`}
           data-testid="table-item-component"
         >
-          <span>{data?.content ? data.content : "No content"}</span>
-          <span className="table-component-extracontent">
-            {data && data.extraContent}
-          </span>
+          {data?.extraContent ? (
+            <>
+              <div>Ikä: {data.extraContent.age}</div>
+              <div>Sukupuoli: {data.extraContent.gender}</div>
+              <div>Ammatti: {data.extraContent.job}</div>
+            </>
+          ): "Ei lisätietoja"}
         </div>
       </td>
     </>

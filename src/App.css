@@ -38,10 +38,11 @@
 }
 
 .table-component {
-  padding-top: 5px;
+  padding: 5px 0px 0px 5px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  border-collapse: collapse;
 }
 
 .table-component-content {
@@ -50,8 +51,14 @@
 
 .table-component-content-open {
   display: block;
+  margin-top: 10px;
 }
 
-.table-component-extracontent {
-  display: block;
+.table-component-toggle-content {
+  margin-bottom: 2px;
+}
+
+td {
+  border: 1px solid black;
+  padding: 10px;
 }

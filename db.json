@@ -1,7 +1,23 @@
 {
   "data": [
-    { "id": 1, "content": "content for first item", "extraContent": "extra content for first item" },
-    { "id": 2, "content": "content for second item", "extraContent": "extra content for second item" },
-    { "id": 3, "content": "content for third item", "extraContent": "extra content for third item" }
+    {
+      "id": 1,
+      "name": "Testi Testaaja",
+      "extraContent": { "age": 25, "gender": "Nainen", "job": "QA Engineer" }
+    },
+    {
+      "id": 2,
+      "name": "Perus Käyttäjä",
+      "extraContent": { "age": 18, "gender": "Mies", "job": "Siivooja" }
+    },
+    {
+      "id": 3,
+      "name": "Mikko Mallikas",
+      "extraContent": { "age": 43, "gender": "Mies", "job": "Koodari" }
+    },
+    {
+      "id": 4,
+      "name": "Teuvo Touhukas"
+    }
   ]
 }
